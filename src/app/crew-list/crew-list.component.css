@@ -1,0 +1,131 @@
+/* src/app/crew-list/crew-list.component.css */
+
+/* Container styling */
+.container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+  }
+  
+  /* Table styling */
+  .table {
+    width: 100%;
+    margin-bottom: 0;
+    table-layout: fixed;
+  }
+  
+  .table thead th {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #e9ecef;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #dee2e6;
+  }
+  
+  .table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+  }
+  
+  /* Button styling */
+  .btn-group .btn-primary {
+    background-color: #2980b9;
+    border-color: #2980b9;
+  }
+  
+  .btn-group .btn-primary:hover {
+    background-color: #1abc9c;
+    border-color: #16a085;
+  }
+  
+  .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+  }
+  
+  .btn-info:hover {
+    background-color: #117a8b;
+    border-color: #0f6674;
+  }
+
+  .btn-primary {
+    background-color: #2980b9;
+    border-color: #2980b9;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1abc9c;
+    border-color: #16a085;
+  }
+  
+  /* Modal styling */
+  .modal-content {
+    border-radius: 8px;
+  }
+  
+  .modal-header {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .modal-body {
+    background-color: #f8f9fa;
+  }
+  
+  /* Form styling */
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    border-radius: 4px;
+  }
+  
+  .form-select {
+    border-radius: 4px;
+  }
+  
+  .text-danger {
+    font-size: 0.875rem;
+  }
+  
+  /* Custom button wide class */
+  .btn-wide {
+    width: 200px;
+    margin: 10px;
+  }
+  
+  /* Card styling */
+  .card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-title {
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    margin-bottom: 15px;
+  }
+  
+  /* Certificate field styling */
+  .certificate-field {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
