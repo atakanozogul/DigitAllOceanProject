@@ -6,13 +6,14 @@ import { Crew } from '../models/crew.model';
 import { Certificate } from '../models/certificate.model';
 import { CrewCertificate } from '../models/crew-certificate.model';
 import { CertificatesComponent } from '../certificates/certificates.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 declare var bootstrap: any;
 
 @Component({
   selector: 'app-crew-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, CertificatesComponent],
+  imports: [CommonModule, FormsModule, CertificatesComponent, TranslateModule],
   templateUrl: './crew-list.component.html',
   styleUrls: ['./crew-list.component.css']
 })

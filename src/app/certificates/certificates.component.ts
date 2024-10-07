@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../services/data.service';
 import { Certificate } from '../models/certificate.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-certificates',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './certificates.component.html',
   styleUrls: ['./certificates.component.css']
 })

@@ -8,11 +8,12 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{ 'welcome' | translate }}
+            {{ 'language' | translate }}
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="#" (click)="changeLanguage('en')">{{ 'en' | translate }}</a></li>
             <li><a class="dropdown-item" href="#" (click)="changeLanguage('fr')">{{ 'fr' | translate }}</a></li>
+            <li><a class="dropdown-item" href="#" (click)="changeLanguage('pt')">{{ 'pt' | translate }}</a></li>
           </ul>
         </li>
       </ul>

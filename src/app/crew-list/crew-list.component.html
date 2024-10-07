@@ -2,16 +2,16 @@
   <table class="table table-striped table-hover">
     <thead class="table-dark">
       <tr>
-        <th scope="col">Action Menu</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Nationality</th>
-        <th scope="col">Title</th>
-        <th scope="col">Days On Board</th>
-        <th scope="col">Daily Rate</th>
-        <th scope="col">Currency</th>
-        <th scope="col">Total Income</th>
-        <th scope="col">Certificates</th>
+        <th scope="col">{{ 'Action Menu' | translate }}</th>
+        <th scope="col">{{ 'First Name' | translate }}</th>
+        <th scope="col">{{ 'Last Name' | translate }}</th>
+        <th scope="col">{{ 'Nationality' | translate }}</th>
+        <th scope="col">{{ 'Title' | translate }}</th>
+        <th scope="col">{{ 'Days On Board' | translate }}</th>
+        <th scope="col">{{ 'Daily Rate' | translate }}</th>
+        <th scope="col">{{ 'Currency' | translate }}</th>
+        <th scope="col">{{ 'Total Income' | translate }}</th>
+        <th scope="col">{{ 'Certificates' | translate }}</th>
       </tr>
     </thead>
     <tbody>
@@ -19,12 +19,12 @@
         <td>
           <div class="btn-group">
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Actions
+              {{ 'Actions' | translate }}
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" (click)="viewCrewCard(crew)">Card Page</a></li>
-              <li><a class="dropdown-item" href="#" (click)="editCrew(crew)">Edit Page</a></li>
-              <li><a class="dropdown-item" href="#" (click)="deleteCrew(crew)">Delete Crew</a></li>
+              <li><a class="dropdown-item" href="#" (click)="viewCrewCard(crew)">{{ 'Card Page' | translate }}</a></li>
+              <li><a class="dropdown-item" href="#" (click)="editCrew(crew)">{{ 'Edit Page' | translate }}</a></li>
+              <li><a class="dropdown-item" href="#" (click)="deleteCrew(crew)">{{ 'Delete Crew' | translate }}</a></li>
             </ul>
           </div>
         </td>
@@ -36,10 +36,10 @@
         <td>{{ crew.dailyRate }}</td>
         <td>{{ crew.currency }}</td>
         <td>{{ crew.totalIncome }}</td>
-        <td><button class="btn btn-primary" (click)="viewCertificates(crew)">Certificates</button></td>
+        <td><button class="btn btn-primary" (click)="viewCertificates(crew)">{{ 'Certificates' | translate }}</button></td>
       </tr>
       <tr *ngFor="let currency of getCurrencies()">
-        <td colspan="8" class="text-end"><strong>Total Income ({{ currency }}):</strong></td>
+        <td colspan="8" class="text-end"><strong>{{ 'Total Income' | translate }} ({{ currency }}):</strong></td>
         <td colspan="1">{{ totalIncomesByCurrency[currency] }}</td>
       </tr>
     </tbody>
@@ -107,57 +107,57 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editCrewModalLabel">Edit Crew</h5>
+        <h5 class="modal-title" id="editCrewModalLabel">{{ 'Edit Crew' | translate }}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form #editCrewForm="ngForm" (ngSubmit)="saveCrew(editCrewForm)">
           <div class="mb-3">
-            <label for="editFirstName" class="form-label">First Name</label>
+            <label for="editFirstName" class="form-label">{{ 'First Name' | translate }}</label>
             <input type="text" class="form-control" id="editFirstName" [(ngModel)]="selectedCrew.firstName" name="editFirstName" required>
             <div *ngIf="editCrewForm.submitted && !editCrewForm.controls['editFirstName']?.valid" class="text-danger">
-              First Name is required.
+              {{ 'First Name is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="editLastName" class="form-label">Last Name</label>
+            <label for="editLastName" class="form-label">{{ 'Last Name' | translate }}</label>
             <input type="text" class="form-control" id="editLastName" [(ngModel)]="selectedCrew.lastName" name="editLastName" required>
             <div *ngIf="editCrewForm.submitted && !editCrewForm.controls['editLastName']?.valid" class="text-danger">
-              Last Name is required.
+              {{ 'Last Name is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="editNationality" class="form-label">Nationality</label>
+            <label for="editNationality" class="form-label">{{ 'Nationality' | translate }}</label>
             <select class="form-select" id="editNationality" [(ngModel)]="selectedCrew.nationality" name="editNationality" required>
               <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
             </select>
             <div *ngIf="editCrewForm.submitted && !editCrewForm.controls['editNationality']?.valid" class="text-danger">
-              Nationality is required.
+              {{ 'Nationality is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="editTitle" class="form-label">Title</label>
+            <label for="editTitle" class="form-label">{{ 'Title' | translate }}</label>
             <input type="text" class="form-control" id="editTitle" [(ngModel)]="selectedCrew.title" name="editTitle" required>
             <div *ngIf="editCrewForm.submitted && !editCrewForm.controls['editTitle']?.valid" class="text-danger">
-              Title is required.
+              {{ 'Title is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="editDaysOnBoard" class="form-label">Days On Board</label>
+            <label for="editDaysOnBoard" class="form-label">{{ 'Days On Board' | translate }}</label>
             <input type="number" class="form-control" id="editDaysOnBoard" [(ngModel)]="selectedCrew.daysOnBoard" name="editDaysOnBoard" required>
             <div *ngIf="editCrewForm.submitted && !editCrewForm.controls['editDaysOnBoard']?.valid" class="text-danger">
-              Days On Board is required.
+              {{ 'Days On Board is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="editDailyRate" class="form-label">Daily Rate</label>
+            <label for="editDailyRate" class="form-label">{{ 'Daily Rate' | translate }}</label>
             <input type="number" class="form-control" id="editDailyRate" [(ngModel)]="selectedCrew.dailyRate" name="editDailyRate" required>
             <div *ngIf="editCrewForm.submitted && !editCrewForm.controls['editDailyRate']?.valid" class="text-danger">
-              Daily Rate is required.
+              {{ 'Daily Rate is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="editCurrency" class="form-label">Currency</label>
+            <label for="editCurrency" class="form-label">{{ 'Currency' | translate }}</label>
             <select class="form-select" id="editCurrency" [(ngModel)]="selectedCrew.currency" name="editCurrency" required>
               <option value="USD">USD</option>
               <option value="EUR">EUR</option>
@@ -165,7 +165,7 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="editCertificates" class="form-label">Certificates</label>
+            <label for="editCertificates" class="form-label">{{ 'Certificates' | translate }}</label>
             <div *ngFor="let cert of newCrewCertificates; let i = index" class="mb-2">
               <select class="form-select mb-1" [(ngModel)]="newCrewCertificates[i].certificateId" name="newCertificateId{{i}}" required (ngModelChange)="onCertificateIdChange($event, i)">
                 <option *ngFor="let certType of certificateTypes" [value]="certType.id">{{ certType.name }}</option>
@@ -173,9 +173,9 @@
               <input type="date" class="form-control mb-1" [(ngModel)]="newCrewCertificates[i].issueDate" name="newIssueDate{{i}}" required>
               <input type="date" class="form-control" [(ngModel)]="newCrewCertificates[i].expiryDate" name="newExpiryDate{{i}}" required>
             </div>
-            <button type="button" class="btn btn-secondary" (click)="addCertificateField()">Add Certificate</button>
+            <button type="button" class="btn btn-secondary" (click)="addCertificateField()">{{ 'Add Certificate' | translate }}</button>
           </div>
-          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <button type="submit" class="btn btn-primary">{{ 'Save Changes' | translate }}</button>
         </form>
       </div>
     </div>
@@ -187,7 +187,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="crewCertificatesModalLabel">Crew Certificates</h5>
+        <h5 class="modal-title" id="crewCertificatesModalLabel">{{ 'Crew Certificates' | translate }}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -200,12 +200,12 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="certificate-field">
-                      <strong>Issue Date:</strong> {{ certificate.issueDate }}
+                      <strong>{{ 'Issue Date' | translate }}:</strong> {{ certificate.issueDate }}
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="certificate-field">
-                      <strong>Expiry Date:</strong> {{ certificate.expiryDate }}
+                      <strong>{{ 'Expiry Date' | translate }}:</strong> {{ certificate.expiryDate }}
                     </div>
                   </div>
                 </div>
@@ -223,29 +223,29 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="certificatesModalLabel">Certificates</h5>
+        <h5 class="modal-title" id="certificatesModalLabel">{{ 'Certificates' | translate }}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <ul class="list-group">
           <li *ngFor="let certificate of certificateTypes; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
             {{ certificate.name }} - {{ certificate.desc }}
-            <button class="btn btn-danger btn-sm" (click)="deleteCertificateType(i)">Delete</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteCertificateType(i)">{{ 'Delete' | translate }}</button>
           </li>
         </ul>
         <form #addCertificateForm="ngForm" (ngSubmit)="addCertificateType(addCertificateForm)" class="mt-3">
           <div class="mb-3">
-            <label for="certificateName" class="form-label">Certificate Name</label>
+            <label for="certificateName" class="form-label">{{ 'Certificate Name' | translate }}</label>
             <input type="text" class="form-control" id="certificateName" [(ngModel)]="newCertificateType.name" name="certificateName" required>
             <div *ngIf="addCertificateForm.submitted && !addCertificateForm.controls['certificateName']?.valid" class="text-danger">
-              Certificate Name is required.
+              {{ 'Certificate Name is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="certificateDesc" class="form-label">Certificate Description</label>
+            <label for="certificateDesc" class="form-label">{{ 'Certificate Description' | translate }}</label>
             <input type="text" class="form-control" id="certificateDesc" [(ngModel)]="newCertificateType.desc" name="certificateDesc">
           </div>
-          <button type="submit" class="btn btn-primary">Add Certificate</button>
+          <button type="submit" class="btn btn-primary">{{ 'Add Certificate' | translate }}</button>
         </form>
       </div>
     </div>
@@ -257,68 +257,68 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addCrewModalLabel">Add Crew</h5>
+        <h5 class="modal-title" id="addCrewModalLabel">{{ 'Add Crew' | translate }}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form #addCrewForm="ngForm" (ngSubmit)="addCrew(addCrewForm)">
           <div class="mb-3">
-            <label for="firstName" class="form-label">First Name</label>
+            <label for="firstName" class="form-label">{{ 'First Name' | translate }}</label>
             <input type="text" class="form-control" id="firstName" name="firstName" ngModel required>
             <div *ngIf="addCrewForm.submitted && !addCrewForm.controls['firstName']?.valid" class="text-danger">
-              First Name is required.
+              {{ 'First Name is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="lastName" class="form-label">Last Name</label>
+            <label for="lastName" class="form-label">{{ 'Last Name' | translate }}</label>
             <input type="text" class="form-control" id="lastName" name="lastName" ngModel required>
             <div *ngIf="addCrewForm.submitted && !addCrewForm.controls['lastName']?.valid" class="text-danger">
-              Last Name is required.
+              {{ 'Last Name is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="nationality" class="form-label">Nationality</label>
+            <label for="nationality" class="form-label">{{ 'Nationality' | translate }}</label>
             <select class="form-select" id="nationality" name="nationality" ngModel required>
               <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
             </select>
             <div *ngIf="addCrewForm.submitted && !addCrewForm.controls['nationality']?.valid" class="text-danger">
-              Nationality is required.
+              {{ 'Nationality is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
+            <label for="title" class="form-label">{{ 'Title' | translate }}</label>
             <input type="text" class="form-control" id="title" name="title" ngModel required>
             <div *ngIf="addCrewForm.submitted && !addCrewForm.controls['title']?.valid" class="text-danger">
-              Title is required.
+              {{ 'Title is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="daysOnBoard" class="form-label">Days On Board</label>
+            <label for="daysOnBoard" class="form-label">{{ 'Days On Board' | translate }}</label>
             <input type="number" class="form-control" id="daysOnBoard" name="daysOnBoard" ngModel required>
             <div *ngIf="addCrewForm.submitted && !addCrewForm.controls['daysOnBoard']?.valid" class="text-danger">
-              Days On Board is required.
+              {{ 'Days On Board is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="dailyRate" class="form-label">Daily Rate</label>
+            <label for="dailyRate" class="form-label">{{ 'Daily Rate' | translate }}</label>
             <input type="number" class="form-control" id="dailyRate" name="dailyRate" ngModel required>
             <div *ngIf="addCrewForm.submitted && !addCrewForm.controls['dailyRate']?.valid" class="text-danger">
-              Daily Rate is required.
+              {{ 'Daily Rate is required' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="currency" class="form-label">Currency</label>
+            <label for="currency" class="form-label">{{ 'Currency' | translate }}</label>
             <select class="form-select" id="currency" name="currency" ngModel required>
               <option value="USD">USD</option>
               <option value="EUR">EUR</option>
               <option value="GBP">GBP</option>
             </select>
             <div *ngIf="addCrewForm.submitted && !addCrewForm.controls['currency']?.valid" class="text-danger">
-              Currency is required.
+              {{ 'Currency is required.' | translate }}
             </div>
           </div>
           <div class="mb-3">
-            <label for="addCertificates" class="form-label">Certificates</label>
+            <label for="addCertificates" class="form-label">{{ 'Certificates' | translate }}</label>
             <div *ngFor="let cert of newCrewCertificates; let i = index" class="mb-2">
               <select class="form-select mb-1" [(ngModel)]="newCrewCertificates[i].certificateId" name="newCertificateId{{i}}" required (ngModelChange)="onCertificateIdChange($event, i)">
                 <option *ngFor="let certType of certificateTypes" [value]="certType.id">{{ certType.name }}</option>
@@ -326,9 +326,9 @@
               <input type="date" class="form-control mb-1" [(ngModel)]="newCrewCertificates[i].issueDate" name="newIssueDate{{i}}" required>
               <input type="date" class="form-control" [(ngModel)]="newCrewCertificates[i].expiryDate" name="newExpiryDate{{i}}" required>
             </div>
-            <button type="button" class="btn btn-secondary d-block mt-2" (click)="addCertificateField()">Add Certificate</button>
+            <button type="button" class="btn btn-secondary d-block mt-2" (click)="addCertificateField()">{{ 'Add Certificate' | translate }}</button>
           </div>
-          <button type="submit" class="btn btn-primary">Add Crew</button>
+          <button type="submit" class="btn btn-primary">{{ 'Add Crew' | translate }}</button>
         </form>
       </div>
     </div>

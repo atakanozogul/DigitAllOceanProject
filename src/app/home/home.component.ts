@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CrewListComponent } from '../crew-list/crew-list.component';
 import { DataService } from '../services/data.service';
 import { Crew } from '../models/crew.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CrewListComponent],
+  imports: [CommonModule, CrewListComponent, TranslateModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
